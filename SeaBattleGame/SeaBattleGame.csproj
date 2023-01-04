@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FA38DCDC-B4E2-4104-9549-3A043C10766C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SeaBattleGame</RootNamespace>
+    <AssemblyName>SeaBattleGame</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GameController.cs" />
+    <Compile Include="GameHelper.cs" />
+    <Compile Include="ScoreUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScoreUC.Designer.cs">
+      <DependentUpon>ScoreUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeaBattleGameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeaBattleGameForm.Designer.cs">
+      <DependentUpon>SeaBattleGameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ship.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ScoreUC.resx">
+      <DependentUpon>ScoreUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeaBattleGameForm.resx">
+      <DependentUpon>SeaBattleGameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MatrixGridViewControl\MatrixGridViewControl.csproj">
+      <Project>{08257eed-caa7-4a06-8bc2-47d24db758d2}</Project>
+      <Name>MatrixGridViewControl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seabattlecell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\topleft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\topborder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\topright.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottomleft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottomright.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\leftborder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rightborder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottomborder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\onedeskship.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\topdeskship.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottomdeskship.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\leftdeskship.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rightdeskship.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\horizdeskship.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vertdeskship.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\destroy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mark.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
